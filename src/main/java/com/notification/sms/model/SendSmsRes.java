@@ -5,6 +5,16 @@ public class SendSmsRes {
 	private String smsDeliveryStatus;
 	private String messageId;
 	
+	public SendSmsRes(String smsDeliveryStatus, String messageId) {
+		super();
+		this.smsDeliveryStatus = smsDeliveryStatus;
+		this.messageId = messageId;
+	}
+	
+	public SendSmsRes() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getMessageId() {
 		return messageId;
 	}
