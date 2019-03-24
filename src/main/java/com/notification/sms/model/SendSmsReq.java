@@ -1,15 +1,18 @@
 package com.notification.sms.model;
 
+import java.util.ArrayList;
+
 public class SendSmsReq {
 	
-	private String destinationNumber;
+	private ArrayList<String> destinationNumber;
 	private String messageContent;
 	private String deliveryRecieptIndicator;
 	
-	public String getDestinationNumber() {
+
+	public ArrayList<String> getDestinationNumber() {
 		return destinationNumber;
 	}
-	public void setDestinationNumber(String destinationNumber) {
+	public void setDestinationNumber(ArrayList<String> destinationNumber) {
 		this.destinationNumber = destinationNumber;
 	}
 	public String getDeliveryRecieptIndicator() {

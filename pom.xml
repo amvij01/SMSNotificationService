@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.1.RELEASE</version>
-		<relativePath/>
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>SMSNotificationService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>SMSNotificationService</name>
 	<description>SMS Notification Management </description>
 
@@ -20,18 +21,20 @@
 	</properties>
 
 	<dependencies>
-			<dependency>
-			<!-- Import dependency management from Spring Boot -->
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-dependencies</artifactId>
-			<version>2.1.2.RELEASE</version>
-			<type>pom</type>
-			<scope>import</scope>
-		</dependency>
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.3</version><!--$NO-MVN-MAN-VER$ -->
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.ws</groupId>
+			<artifactId>spring-ws-security</artifactId>
 		</dependency>
 
 		<dependency>
@@ -48,24 +51,18 @@
 			<groupId>org.springframework.restdocs</groupId>
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
-		</dependency>		
+		</dependency>
 		<dependency>
-			<groupId>org.jsmpp</groupId>
-			<artifactId>jsmpp</artifactId>
-			<version>2.3.6</version>
-		</dependency>		
+			<groupId>org.springframework.ws</groupId>
+			<artifactId>spring-ws-core</artifactId>
+		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<outputDirectory>/tmp/src/target</outputDirectory>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
